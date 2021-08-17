@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'ecommerceUsersMicroservice.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': 'ec2-34-233-114-40.compute-1.amazonaws.com',
+        'NAME': 'd9eiv7fc5dk2t3',
+        'USER': 'shvifxpfrhwjox',
+        'PORT': '5432',
+        'PASSWORD': 'd41961202e4da54df5c1fe51b70a17398e1386de467af1c8abd2b96d36195c5f',
     }
 }
 
