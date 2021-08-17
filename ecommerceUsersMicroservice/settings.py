@@ -72,7 +72,7 @@ REST_FRAMEWORK = {
     )
 }
 
-AUTH_USER_MODEL = 'usersApp.ecommerceUser'
+AUTH_USER_MODEL = 'ecommerceUsersApp.ecommerceUser'
 
 ROOT_URLCONF = 'ecommerceUsersMicroservice.urls'
 

@@ -13,6 +13,12 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+    def create_superuser(self, username, password):
+            user = self.create_user(username=username, password=password)
+            user.is_admin = True
+            user.save(using=self._db)
+            return user
+
 class ecommerceUser(AbstractBaseUser, PermissionsMixin):
     id = models.BigAutoField(primary_key=True)
     username = models.CharField('Name', max_length = 15, unique=True)
