@@ -72,6 +72,8 @@ REST_FRAMEWORK = {
     )
 }
 
+AUTH_USER_MODEL = 'usersApp.ecommerceUser'
+
 ROOT_URLCONF = 'ecommerceUsersMicroservice.urls'
 
 TEMPLATES = [
