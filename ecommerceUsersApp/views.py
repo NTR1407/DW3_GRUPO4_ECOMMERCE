@@ -23,3 +23,22 @@ class VerifyTokenView(TokenVerifyView):
             raise InvalidToken(e.args[0])
             
         return Response(serializer.validated_data, status=status.HTTP_200_OK)
+
+        # put y post llevan body
+        # get y delet parametros por url
+        # pip freezer > requirements.txt
+class userInformation():
+
+    def get(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+
+        if serializer.is_valid():
+            # telephone = serializer.validated_data.get('telephone')
+            return Response(serializer.validated_data, status=status.HTTP_200_OK)
+
+        else:
+            return Response(
+                serializer.errors,
+                status=status.HTTP_400_BAD_REQUEST
+            )
+            

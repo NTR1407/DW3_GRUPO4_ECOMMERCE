@@ -22,6 +22,9 @@ class UserManager(BaseUserManager):
 class ecommerceUser(AbstractBaseUser, PermissionsMixin):
     id = models.BigAutoField(primary_key=True)
     username = models.CharField('Name', max_length = 15, unique=True)
+    telephone = models.IntegerField('Telephone' ,default = 0000000000)
+    address = models.CharField('Address', default = 'Bogotá, Colombia', max_length= 256)
+    email =models.EmailField('Email', default = 'example@email.com', max_length = 50, unique=True)
     password = models.CharField('Password', max_length = 256)
     objects = UserManager()
 
