@@ -16,11 +16,13 @@ Including another URLconf
 from django.urls import path
 from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
 from ecommerceUsersApp.views import VerifyTokenView
-from ecommerceUsersApp.views import userInformation
+# from ecommerceUsersApp.views import UserInformationView
+from ecommerceUsersApp.views import user_information_view, user_detail_view
 
 urlpatterns = [
     path('token/', TokenObtainPairView.as_view()),
     path('token/refresh/', TokenRefreshView.as_view()),
     path('token/verify/', VerifyTokenView.as_view()),
-    path('users/', userInformation.as_view())
+    path('users/', user_information_view),
+    path('users/<int:pk>', user_detail_view)
 ]
