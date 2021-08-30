@@ -10,6 +10,8 @@ from rest_framework.decorators import api_view
 from rest_framework_simplejwt.views import TokenVerifyView
 from rest_framework_simplejwt.backends import TokenBackend
 from rest_framework_simplejwt.exceptions import InvalidToken, TokenError
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 # Create your views here.
 
